@@ -3,7 +3,6 @@ function updateTime() {
   let losAngelesDateElement = losAngelesElement.querySelector(".date");
   let losAngelesTimeElement = losAngelesElement.querySelector(".time");
   let losAngelesTime = moment().tz("America/Los_Angeles");
-
   losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
   losAngelesTimeElement.innerHTML = losAngelesTime.format(
     "h:mm:ss [<small>]A[</small>]"
@@ -15,6 +14,15 @@ function updateTime() {
   let parisTime = moment().tz("Europe/Paris");
   parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
   parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+
+  let jakartaElement = document.querySelector("#jakarta");
+  let jakartaDateElement = jakartaElement.querySelector(".date");
+  let jakartaTimeElement = jakartaElement.querySelector(".time");
+  let jakartaTime = moment().tz("Europe/jakarta");
+  jakartaDateElement.innerHTML = jakartaTime.format("MMMM Do YYYY");
+  jakartaTimeElement.innerHTML = jakartaTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
 }
 function updateCity(event) {
   let selectedCityTimeZone = event.target.value;
